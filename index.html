@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Panduan Digital Pondok Pesantren</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2b6777;
+            --secondary-color: #52ab98;
+            --accent-color: #c8d8e4;
+            --text-color: #333;
+            --light-color: #f2f2f2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Amiri', serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            direction: rtl;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-image: url('https://i.imghippo.com/files/xC4697Fhc.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(43, 103, 119, 0.85);
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            font-family: 'Scheherazade New', serif;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .logo img {
+         max-width: 150px; /* Atur ukuran maksimum logo */
+        height: auto; /* Biarkan tinggi otomatis untuk menjaga rasio aspek */
+        border-radius: 50%; /* Jika ingin logo berbentuk bulat */
+        }
+
+        
+        
+        .arabic-text {
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.5rem;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .section {
+            margin: 40px 0;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-right: 5px solid var(--secondary-color);
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-family: 'Scheherazade New', serif;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        .ayat {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-right: 3px solid var(--primary-color);
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.3rem;
+            line-height: 2;
+            margin: 15px 0;
+            text-align: right;
+        }
+        
+        .hadits {
+            background-color: #f8f4e8;
+            padding: 15px;
+            border-right: 3px solid #d4a017;
+            margin: 15px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #555;
+            border-left: 3px solid #ccc;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+        
+        ul.content-list {
+            margin-left: 20px;
+        }
+        
+        ul.content-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 15px;
+        }
+        
+        ul.content-list li::before {
+            content: '\2022';
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: -1em;
+        }
+        
+        .image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: #666;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://i.imghippo.com/files/mRhp4885RjE.jpg" alt="Logo Pondok Pesantren" style="width: 100%; height: auto; border-radius: 50%;">
+            </div>
+            <h1>BUKU PANDUAN DIGITAL<br>PONDOK PESANTREN AL-ISTIQOMAH</h1>
+            <p>Petunjuk Lengkap Untuk Santri, Pengajar, dan Pengelola Pesantren</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#pengertian">Pengertian</a></li>
+            <li><a href="#visi-misi">Visi & Misi</a></li>
+            <li><a href="#kurikulum">Kurikulum</a></li>
+            <li><a href="#tata-tertib">Tata Tertib</a></li>
+            <li><a href="#jadwal-kegiatan">Jadwal Kegiatan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="pengertian" class="section">
+            <h2>Sekilas Tentang Pondok Pesantren</h2>
+            
+            <div class="image-container">
+                <img src="https://i.imghippo.com/files/DuJL6324utw.jpg" alt="">
+                <p class="image-caption"></p>
+            </div>
+            
+            <p>Pondok Pesantren Al-Istiqomah didirikan pada tahun 2017 oleh KH. Choirul Anam, S.H dan Bunda Titin Ummu Faudah, S.Pd dengan visi membentuk generasi muslim yang berpegang teguh pada Al-Qur'an dan Sunnah dengan pemahaman ahlus sunnah wal jama'ah.
+
+            Kini di bawah asuhan KH. Choirul Anam, pesantren kami telah berkembang menjadi lembaga pendidikan yang mengintegrasikan kurikulum formal (Kementerian Agama) dengan pendidikan karakter islami dan program tahfidz Al-Qur'an.</p>
+            
+            <div class="ayat">
+                يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنْكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ
+                <p>Artinya: "Allah akan meninggikan orang-orang yang beriman di antaramu dan orang-orang yang diberi ilmu pengetahuan beberapa derajat." (QS. Al-Mujadalah: 11)</p>
+            </div>
+            
+            <p>Pesantren didirikan dengan tujuan utama untuk:</p>
+            <ul class="content-list">
+                <li>Mencetak generasi muslim yang berakhlak mulia</li>
+                <li>Menjaga kemurnian ajaran Islam sesuai Al-Qur'an dan Sunnah</li>
+                <li>Menyediakan pendidikan yang mengintegrasikan ilmu dunia dan akhirat</li>
+                <li>Membangun karakter santri yang mandiri dan bertanggung jawab</li>
+            </ul>
+        </section>
+        
+        <section id="visi-misi" class="section">
+            <h2>Visi dan Misi Pondok Pesantren</h2>
+            
+            <h3>Visi</h3>
+            <p>Menjadi lembaga dan pendidikan islami yang di ridhoi Allah SWT dalam mencerahkan dan mencerdaskan kehidupan bangsa guna membentuk santri yang beriman dan berilmu,beramal,bertaqwa menuju izzul islam wal muslimin</p>
+            
+            <div class="hadits">
+                <p>"Sebaik-baik kalian adalah orang yang mempelajari Al-Qur'an dan mengajarkannya." (HR. Bukhari)</p>
+            </div>
+            
+            <h3>Misi</h3>
+            <ul class="content-list">
+                <li>Membina dan mengembangkan dakwah dan pendidikan islami dalam arti yang seluas luas nya dengan Amar Ma'ruf Nahi Munkar</li>
+                <li>Mengawal dan membelah Aqidah Islam yang berlandaskan pada Al-Qur'an dan Sunnah Rosul</li>
+                <li>Menegakkan nilai-nilai kemanusiaan sesuai ajaran Islam demi kesejahteraan umat dan bangsa lahir dan batin</li>
+                <li>Meningkatkan kualitas SDM guna mewujudkan bermasyarakat yang beriman, berilmu, beramal dan bertaqwa melalui pengembangan kegiatan yang meningkatkan Infaq dan IPTEK sesuai Aqidah Islam</li>
+                <li>Mendorong terwujudnya persatuan dan kesatuan umat untuk kesejahteraan seluruh rakyat</li>
+            </ul>
+            
+            <div class="image-container">
+                <img src="https://i.imghippo.com/files/oMO9934Cqo.jpg" alt="">
+                <p class="image-caption"></p>
+            </div>
+        </section>
+        
+        <section id="kurikulum" class="section">
+            <h2>Kurikulum Pendidikan</h2>
+            
+            <p>Kurikulum Pondok Pesantren Al-Ihsan terdiri dari tiga komponen utama:</p>
+            
+            <h3>1. Pendidikan Agama Islam</h3>
+            <ul class="content-list">
+                <li>Bulughul marom</li>
+                <li>Tafsir Al-Qur'an</li>
+                <li>Kitab Hikam</li>
+                <li>Bahasa Arab</li>
+                <li>Bahasa Inggris</li>
+            </ul>
+            
+            <h3>2. Pendidikan Keterampilan</h3>
+            <ul class="content-list">
+                <li>Silat(PSHT dan PN)</li>
+                <li>Banjari</li>
+                <li>Bahasa Arab</li>
+                <li>Bahasa Inggris</li>
+            </ul>
+            
+            <div class="quote">
+                "Ilmu tanpa amal seperti pohon tanpa buah, dan amal tanpa ilmu seperti bangunan tanpa pondasi." - Imam Ghazali
+            </div>
+        </section>
+        
+        <section id="tata-tertib" class="section">
+            <h2>Tata Tertib Santri</h2>
+            
+            <div class="image-container">
+                <img src="https://i.imghippo.com/files/fIkR6969bQA.jpg" alt="">
+                <p class="image-caption"></p>
+            </div>
+            
+            <h3>Kewajiban Santri</h3>
+            <ul class="content-list">
+                <li>Menjaga shalat wajib berjamaah di masjid</li>
+                <li>Menghafal Al-Qur'an sesuai target yang ditetapkan</li>
+                <li>Hadir tepat waktu untuk semua kegiatan pembelajaran</li>
+                <li>Menjaga kebersihan diri dan lingkungan</li>
+                <li>Menghormati ustadz/ustadzah dan semua warga pesantren</li>
+                <li>Menggunakan bahasa yang santun dan sopan</li>
+                <li>Memakai pakaian yang sopan dan sesuai aturan pesantren</li>
+                <li>Menjaga nama baik pesantren di mana pun berada</li>
+            </ul>
+            
+            <h3>Larangan untuk Santri</h3>
+            <ul class="content-list">
+                <li>Merokok, menggunakan narkoba, dan minuman keras</li>
+                <li>Membawa perangkat elektronik yang tidak diperlukan</li>
+                <li>Keluar pesantren tanpa izin</li>
+                <li>Mengikuti kegiatan yang bertentangan dengan nilai Islam</li>
+                <li>Melakukan pergaulan bebas antara santri putra - putri</li>
+                <li>Melakukan tindakan kekerasan atau pelecehan</li>
+            </ul>
+            
+            <div class="hadits">
+                <p>"Setiap kalian adalah pemimpin dan akan dimintai pertanggungjawaban atas kepemimpinannya." (HR. Bukhari)</p>
+            </div>
+        </section>
+        
+        <section id="jadwal-kegiatan" class="section">
+            <h2>Jadwal Kegiatan Harian</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>Kegiatan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>04.00 - 03.30</td>
+                        <td>Bangun tidur dan persiapan sholat tahajud</td>
+                    </tr>
+                    <tr>
+                        <td>04.30 - 04.00</td>
+                        <td>Sholat tahajud berjamaah dan dilanjut sholat shubuh berjamaah</td>
+                    </tr>
+                    <tr>
+                        <td>05.00 - 04.30</td>
+                        <td>Tadarus Al-Qur'an</td>
+                    </tr>
+                    <tr>
+                        <td>07.30 - 06.30</td>
+                        <td>Sarapan dan persiapan sekolah</td>
+                    </tr>
+                    <tr>
+                        <td>12.30 - 07.30</td>
+                        <td>Kegiatan belajar formal</td>
+                    </tr>
+                    <tr>
+                        <td>14.00 - 12.30</td>
+                        <td>Sholat zhuhur berjamaah, makan siang, dan istirahat</td>
+                    </tr>
+                    <tr>
+                        <td>16.30 - 16.00</td>
+                        <td>Sholat ashar berjamaah dan dilanjut ngaji sore</td>
+                    </tr>
+                    <tr>
+                        <td>17.00 - 16.30</td>
+                        <td>Kegiatan ekstrakurikuler</td>
+                    </tr>
+                    <tr>
+                        <td>18.10 - 17.30</td>
+                        <td>Mandi</td>
+                    </tr>
+                    <tr>
+                        <td>19.30 - 18.30</td>
+                        <td>Sholat maghrib berjamaah dan tadarus</td>
+                    </tr>
+                    <tr>
+                        <td>21.00 - 19.30</td>
+                        <td>Sholat isya berjamaah dan dilanjut diniah</td>
+                    </tr>
+                    <tr>
+                        <td>03.30 - 21.00</td>
+                        <td>Istirahat malam</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="ayat">
+                وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ
+                <p>Artinya: "Dan Aku tidak menciptakan jin dan manusia melainkan supaya mereka beribadah kepada-Ku." (QS. Adz-Dzariyat: 56)</p>
+            </div>
+            
+            <div class="image-container">
+                <img src="https://i.imghippo.com/files/lXW7086iU.jpg" alt="">
+                <p class="image-caption"></p>
+            </div>
+        </section>
+        
+        <section id="kontak" class="section">
+            <h2>Informasi dan Kontak</h2>
+            
+            <h3>Alamat Pondok Pesantren</h3>
+            <p>JL. Raya Cukir, Diwek, Jombang, Jawa Timur 61471, Indonesia 43271</p>
+            <h3>Kontak yang Dapat Dihubungi</h3>
+            <ul class="content-list">
+                <li>WhatsApp: +62 812-3037-7617 (WA)</li>
+                <li>Email: info:ppalistiqomah@gmail.com</li>
+                <li>Website: https://pondokpesantren-al-istiqomah-cukir.vercel.app/</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p><strong>Pondok Pesantren Al-Ihsan</strong></p>
+            <p>"Mencetak Generasi Qur'ani yang Berakhlak Mulia"</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook">Facebook</i></a>
+                <a href="#"><i class="fab fa-instagram">Instagram</i></a>
+                <a href="#"><i class="fab fa-youtube">YouTube</i></a>
+                <a href="#"><i class="fab fa-twitter">Twitter</i></a>
+            </div>
+            <p>&copy; 2025 Buku Panduan Digital Pondok Pesantren Al-Istiqomah. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>
